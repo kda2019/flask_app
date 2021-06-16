@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action="{{ action }}" method="{{ method }}" id="form">
+        {% for i in inputs %}
+            <input type="hidden" name="{{ i[0] }}" value="{{ i[1] }}">
+        {% endfor %}
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        form = document.getElementById('form')
+        form.submit()
+    </script>
+{% endblock %}

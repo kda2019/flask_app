@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main>
+        <form action="/" method="POST">
+            <fieldset>
+                <legend>Валюта и сумма платежа</legend>
+                <label>
+                    <input type="number" name="sum" required step="0.01" min="0.01" max="100000">
+                </label>
+                <label>
+                    <select name="cur" required>
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                        <option value="RUB">RUB</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Описание</legend>
+
+                <label>
+                    <textarea name="description"></textarea>
+                </label>
+            </fieldset>
+
+
+            <input type="submit">
+        </form>
+    </main>
+{% endblock %}

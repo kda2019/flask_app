@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form name="Pay" method="post" action="https://pay.piastrix.com/ru/pay" accept-charset="UTF-8" id="form">
+        <input type="hidden" name="amount" value="{{ sum }}">
+        <input type="hidden" name="currency" value="978">
+        <input type="hidden" name="shop_id" value="5">
+        <input type="hidden" name="sign" value="{{ sign }}">
+        <input type="hidden" name="shop_order_id" value="{{ shop_order_id }}">
+        <input type="hidden" name="description" value="{{ description }}">
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        form = document.getElementById('form')
+        form.submit()
+    </script>
+{% endblock %}
